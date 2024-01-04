@@ -1,26 +1,21 @@
 "use client";
 
-import React, { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Logo from "../../assets/chatgptLogo.svg";
 import Send from "../../assets/send.svg";
 import Question from "./Question";
 import Answer from "./Answer";
 
-interface Message {
-  question: string;
-  answer: string;
-}
-
-const Main: React.FC = () => {
-  const [chatHistory, setChatHistory] = useState<Message[]>([]);
-  const [userInput, setUserInput] = useState<string>("");
-  const handleUserInput = (e: ChangeEvent<HTMLInputElement>) => {
+const Main = () => {
+  const [chatHistory, setChatHistory] = useState([]);
+  const [userInput, setUserInput] = useState("");
+  const handleUserInput = (e) => {
     setUserInput(e.target.value);
   };
 
   const handleSendMessage = () => {
-    const newMessage: Message = {
+    const newMessage = {
       question: userInput,
       answer:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore nemo sequi quisquam consequatur ducimus. At ea ullam labore minima optio!",
@@ -37,7 +32,7 @@ const Main: React.FC = () => {
         </div>
       </div>
       <div className="overflow-y-auto flex-1 p-4 custom-scrollbar">
-        {chatHistory.map((message: Message, index) => (
+        {chatHistory.map((message, index) => (
           <div key={index} className="flex flex-col">
             <Question message={message} />
             <Answer message={message} />
