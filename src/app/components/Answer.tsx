@@ -2,7 +2,13 @@ import React from "react";
 import Image from "next/image";
 import Logo from "../../assets/chatgptLogo.svg";
 
-const Answer = ({ message }) => {
+interface AnswerProps {
+  message: {
+    answer: string;
+  };
+}
+
+const Answer: React.FC<AnswerProps> = ({ message }) => {
   return (
     <div>
       <div className="flex gap-x-2 p-4">

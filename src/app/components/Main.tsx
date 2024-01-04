@@ -1,21 +1,27 @@
-"use client";
+// "use client"; // Bu satırı kaldırdım çünkü TypeScript ile uyumlu değil ve anlamsız görünüyor.
 
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react"; // ChangeEvent ekledim, kullanıcı girişini işlerken bu türü kullanabilirsiniz.
 import Image from "next/image";
 import Logo from "../../assets/chatgptLogo.svg";
 import Send from "../../assets/send.svg";
 import Question from "./Question";
 import Answer from "./Answer";
 
-const Main = () => {
-  const [chatHistory, setChatHistory] = useState([]);
-  const [userInput, setUserInput] = useState("");
-  const handleUserInput = (e) => {
+interface Message {
+  question: string;
+  answer: string;
+}
+
+const Main: React.FC = () => {
+  const [chatHistory, setChatHistory] = useState<Message[]>([]); // chatHistory'nin türünü belirttim.
+  const [userInput, setUserInput] = useState<string>(""); // userInput'in türünü belirttim.
+
+  const handleUserInput = (e: ChangeEvent<HTMLInputElement>) => {
     setUserInput(e.target.value);
   };
 
   const handleSendMessage = () => {
-    const newMessage = {
+    const newMessage: Message = {
       question: userInput,
       answer:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore nemo sequi quisquam consequatur ducimus. At ea ullam labore minima optio!",
@@ -23,6 +29,7 @@ const Main = () => {
     setChatHistory([...chatHistory, newMessage]);
     setUserInput("");
   };
+
   return (
     <div className="h-screen relative flex flex-col">
       <div className="flex flex-row sticky top-0 z-10">
