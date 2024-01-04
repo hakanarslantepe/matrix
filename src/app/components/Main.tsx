@@ -1,4 +1,4 @@
-// "use client"; // Bu satırı kaldırdım çünkü TypeScript ile uyumlu değil ve anlamsız görünüyor.
+"use client"
 
 import React, { useState, ChangeEvent } from "react"; // ChangeEvent ekledim, kullanıcı girişini işlerken bu türü kullanabilirsiniz.
 import Image from "next/image";
