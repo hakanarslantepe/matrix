@@ -2,7 +2,13 @@ import React from "react";
 import Image from "next/image";
 import UserImage from "../../assets/user-icon.png";
 
-const Question = ({message}) => {
+interface AnswerProps {
+  message: {
+    question: string;
+  };
+}
+
+const Question: React.FC<AnswerProps> = ({ message }) => {
   return (
     <div>
       <div className="flex gap-x-2 p-4">
@@ -15,9 +21,7 @@ const Question = ({message}) => {
         />
         <p className="font-bold">You</p>
       </div>
-      <div>
-        {message?.question}
-      </div>
+      <div>{message?.question}</div>
     </div>
   );
 };

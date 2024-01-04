@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import React, { useState, ChangeEvent } from "react"; // ChangeEvent ekledim, kullanıcı girişini işlerken bu türü kullanabilirsiniz.
+import React, { useState, ChangeEvent } from "react";
 import Image from "next/image";
 import Logo from "../../assets/chatgptLogo.svg";
 import Send from "../../assets/send.svg";
@@ -13,8 +13,8 @@ interface Message {
 }
 
 const Main: React.FC = () => {
-  const [chatHistory, setChatHistory] = useState<Message[]>([]); // chatHistory'nin türünü belirttim.
-  const [userInput, setUserInput] = useState<string>(""); // userInput'in türünü belirttim.
+  const [chatHistory, setChatHistory] = useState<Message[]>([]);
+  const [userInput, setUserInput] = useState<string>("");
 
   const handleUserInput = (e: ChangeEvent<HTMLInputElement>) => {
     setUserInput(e.target.value);
