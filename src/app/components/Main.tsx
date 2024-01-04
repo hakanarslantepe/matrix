@@ -37,7 +37,7 @@ const Main: React.FC = () => {
         </div>
       </div>
       <div className="overflow-y-auto flex-1 p-4 custom-scrollbar">
-        {chatHistory.map((message, index) => (
+        {chatHistory.map((message: Message, index) => (
           <div key={index} className="flex flex-col">
             <Question message={message} />
             <Answer message={message} />
