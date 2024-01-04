@@ -125,6 +125,102 @@ const UpperSide = () => {
           <p>Question</p>
         </button>
       </div>
+      <div className="m-2">
+        <button className="w-full text-left p-2 hover:bg-slate-400 rounded-md border-solid border-[1px] border-slate-400 flex flex-row items-center gap-x-2">
+          <Image
+            src={Message}
+            alt="Icon"
+            width={20}
+            height={20}
+            className="rounded-full"
+          />
+          <p>Question</p>
+        </button>
+      </div>
+      <div className="m-2">
+        <button className="w-full text-left p-2 hover:bg-slate-400 rounded-md border-solid border-[1px] border-slate-400 flex flex-row items-center gap-x-2">
+          <Image
+            src={Message}
+            alt="Icon"
+            width={20}
+            height={20}
+            className="rounded-full"
+          />
+          <p>Question</p>
+        </button>
+      </div>
+      <div className="m-2">
+        <button className="w-full text-left p-2 hover:bg-slate-400 rounded-md border-solid border-[1px] border-slate-400 flex flex-row items-center gap-x-2">
+          <Image
+            src={Message}
+            alt="Icon"
+            width={20}
+            height={20}
+            className="rounded-full"
+          />
+          <p>Question</p>
+        </button>
+      </div>
+      <div className="m-2">
+        <button className="w-full text-left p-2 hover:bg-slate-400 rounded-md border-solid border-[1px] border-slate-400 flex flex-row items-center gap-x-2">
+          <Image
+            src={Message}
+            alt="Icon"
+            width={20}
+            height={20}
+            className="rounded-full"
+          />
+          <p>Question</p>
+        </button>
+      </div>
+      <div className="m-2">
+        <button className="w-full text-left p-2 hover:bg-slate-400 rounded-md border-solid border-[1px] border-slate-400 flex flex-row items-center gap-x-2">
+          <Image
+            src={Message}
+            alt="Icon"
+            width={20}
+            height={20}
+            className="rounded-full"
+          />
+          <p>Question</p>
+        </button>
+      </div>
+      <div className="m-2">
+        <button className="w-full text-left p-2 hover:bg-slate-400 rounded-md border-solid border-[1px] border-slate-400 flex flex-row items-center gap-x-2">
+          <Image
+            src={Message}
+            alt="Icon"
+            width={20}
+            height={20}
+            className="rounded-full"
+          />
+          <p>Question</p>
+        </button>
+      </div>
+      <div className="m-2">
+        <button className="w-full text-left p-2 hover:bg-slate-400 rounded-md border-solid border-[1px] border-slate-400 flex flex-row items-center gap-x-2">
+          <Image
+            src={Message}
+            alt="Icon"
+            width={20}
+            height={20}
+            className="rounded-full"
+          />
+          <p>Question</p>
+        </button>
+      </div>
+      <div className="m-2">
+        <button className="w-full text-left p-2 hover:bg-slate-400 rounded-md border-solid border-[1px] border-slate-400 flex flex-row items-center gap-x-2">
+          <Image
+            src={Message}
+            alt="Icon"
+            width={20}
+            height={20}
+            className="rounded-full"
+          />
+          <p>Question</p>
+        </button>
+      </div>
     </div>
   );
 };

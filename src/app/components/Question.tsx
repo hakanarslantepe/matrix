@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import UserImage from "../../assets/user-icon.png";
 
-const Question = () => {
+const Question = ({message}) => {
   return (
     <div>
       <div className="flex gap-x-2 p-4">
@@ -16,8 +16,7 @@ const Question = () => {
         <p className="font-bold">You</p>
       </div>
       <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore nemo
-        sequi quisquam consequatur ducimus. At ea ullam labore minima optio!
+        {message?.question}
       </div>
     </div>
   );

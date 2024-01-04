@@ -12,7 +12,7 @@ const Sidebar = () => {
           <p className="text-center font-bold"> New Chat</p>
         </div>
       </div>
-      <div className="overflow-y-auto flex-1">
+      <div className="overflow-y-auto flex-1 custom-scrollbar">
         <UpperSide />
       </div>
 
