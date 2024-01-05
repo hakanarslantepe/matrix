@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, useEffect, useRef } from "react";
 import Image from "next/image";
 import Logo from "../../assets/chatgptLogo.svg";
 import Send from "../../assets/send.svg";
@@ -15,8 +15,16 @@ interface Message {
 const Main: React.FC = () => {
   const [chatHistory, setChatHistory] = useState<Message[]>([]);
   const [userInput, setUserInput] = useState<string>("");
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  const handleUserInput = (e: ChangeEvent<HTMLInputElement>) => {
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
+    }
+  }, [chatHistory]);
+
+  const handleUserInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setUserInput(e.target.value);
   };
 
@@ -38,7 +46,10 @@ const Main: React.FC = () => {
           <p className="font-bold text-xl"> LEARNING MATRIX</p>
         </div>
       </div>
-      <div className="overflow-y-auto flex-1 p-4 custom-scrollbar">
+      <div
+        className="overflow-y-auto flex-1 p-4 custom-scrollbar"
+        ref={chatContainerRef}
+      >
         {chatHistory.map((message, index) => (
           <div key={index} className="flex flex-col">
             <Question message={message} />
@@ -47,17 +58,32 @@ const Main: React.FC = () => {
         ))}
       </div>
 
-      <div className="sticky bottom-2 z-10 flex items-center justify-center gap-x-2 p-4">
-        <input
-          type="text"
-          value={userInput}
-          onChange={handleUserInput}
-          placeholder="Message Matrix Ai..."
-          className="bg-transparent p-4 border-2 border-solid border-white rounded-[10px] w-[700px] focus:outline-none "
-        />
-        <button onClick={handleSendMessage}>
-          <Image src={Send} alt="Send Icon" className="transform rotate-270" />
-        </button>
+      <div className="sticky bottom-2 z-10 flex items-center justify-center p-4 ">
+        <div className="relative border-2 border-white rounded-xl lg:w-[60%] w-full mx-auto flex">
+          <textarea
+            value={userInput}
+            onChange={handleUserInput}
+            onKeyUp={(e) => {
+              if (e.key === "Enter") {
+                handleSendMessage();
+              }
+            }}
+            rows={1}
+            placeholder="Message Matrix Ai..."
+            className="bg-transparent focus:outline-none w-[90%] flex p-4 custom-scrollbar resize-none"
+          />
+
+          <button
+            onClick={handleSendMessage}
+            className="absolute right-4 top-4"
+          >
+            <Image
+              src={Send}
+              alt="Send Icon"
+              className="transform rotate-270"
+            />
+          </button>
+        </div>
       </div>
     </div>
   );
