@@ -10,7 +10,7 @@ interface AnswerProps {
 
 const Question: React.FC<AnswerProps> = ({ message }) => {
   return (
-    <div className="lg:w-[60%] w-full mx-auto shadow-xl bg-slate-400 rounded-2xl p-4 mb-4">
+    <div className="lg:w-[60%] w-full mx-auto shadow-xl rounded-2xl p-4 mb-4">
       <div className="flex gap-x-2">
         <Image
           src={UserImage}
@@ -19,7 +19,7 @@ const Question: React.FC<AnswerProps> = ({ message }) => {
           height={30}
           className="rounded-full"
         />
-        <p className="font-bold text-slate-700">You</p>
+        <p className="font-bold text-orange">You</p>
       </div>
       <div className="text-justify focus:outline-none" contentEditable="true">{message?.question}</div>
     </div>

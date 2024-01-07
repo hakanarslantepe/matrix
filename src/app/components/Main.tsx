@@ -2,7 +2,7 @@
 
 import React, { useState, ChangeEvent, useEffect, useRef } from "react";
 import Image from "next/image";
-import Logo from "../../assets/chatgptLogo.svg";
+import Logo from "../../assets/matrixLogo.png";
 import Send from "../../assets/send.svg";
 import Question from "./Question";
 import Answer from "./Answer";
@@ -42,8 +42,11 @@ const Main: React.FC = () => {
     <div className="h-screen relative flex flex-col">
       <div className="flex flex-row sticky top-0 z-10">
         <div className="flex p-4 gap-x-2">
-          <Image src={Logo} alt="logo" width={25} height={25} />
-          <p className="font-bold text-xl"> LEARNING MATRIX</p>
+          <Image src={Logo} alt="logo" width={60} height={50} />
+          <div className="flex flex-col text-center text-orange">
+            <p className="font-bold text-2xl lowercase"> LEARNING MATRIX</p>
+            <p className="font-bold text-lg lowercase"> Al Power in Education</p>
+          </div>
         </div>
       </div>
       <div
@@ -59,7 +62,7 @@ const Main: React.FC = () => {
       </div>
 
       <div className="sticky bottom-2 z-10 flex items-center justify-center p-4 ">
-        <div className="relative border-2 border-white rounded-xl lg:w-[60%] w-full mx-auto flex">
+        <div className="relative border-2 border-orange rounded-xl lg:w-[60%] w-full mx-auto flex">
           <textarea
             value={userInput}
             onChange={handleUserInput}
@@ -75,7 +78,7 @@ const Main: React.FC = () => {
 
           <button
             onClick={handleSendMessage}
-            className="absolute right-4 top-4"
+            className="absolute right-2 top-2 hover:border-[2px] rounded-xl p-2 border-orange"
           >
             <Image
               src={Send}

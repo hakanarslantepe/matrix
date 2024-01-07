@@ -37,14 +37,14 @@ export default function Home() {
   return (
     <div className="flex flex-row text-white h-screen">
       <div
-        className={`bg-slate-700 ${
+        className={`bg-[#D69723] ${
           sidebarVisible ? "block w-[18%]" : "hidden"
         }`}
       >
         <Sidebar />
       </div>
       <div
-        className={`relative bg-slate-500 ${
+        className={`relative bg-white text-black ${
           sidebarVisible ? "w-[82%]" : "w-[100%]"
         }`}
       >
@@ -56,17 +56,17 @@ export default function Home() {
           onMouseLeave={handleMouseLeave}
         >
           {showTextOnHover && (
-            <span className="absolute top-0 left-2 p-2 bg-slate-700 rounded-lg text-sm text-nowrap">
-             { sidebarVisible ? "Close SIdebar" : "Open Sidebar"}
+            <span className="absolute top-0 left-3 p-2 bg-orange rounded-lg text-sm text-nowrap">
+             { sidebarVisible ? "Close Sidebar" : "Open Sidebar"}
             </span>
           )}
           <div
-            className={`h-5 w-1 rounded-full  bg-white ${
+            className={`h-5 w-1 rounded-full  bg-orange ${
               sidebarVisible ? "transform-2" : "transform-3"
             }`}
           />
           <div
-            className={`h-5 w-1 rounded-full  bg-white ${
+            className={`h-5 w-1 rounded-full  bg-orange ${
               sidebarVisible ? "transform-1" : "transform-4"
             }`}
           />
