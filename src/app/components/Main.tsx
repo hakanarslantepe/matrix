@@ -47,7 +47,7 @@ const Main: React.FC = () => {
         </div>
       </div>
       <div
-        className="overflow-y-auto flex-1 p-4 custom-scrollbar"
+        className="overflow-y-auto flex-1 pl-6 pr-4 py-4 custom-scrollbar"
         ref={chatContainerRef}
       >
         {chatHistory.map((message, index) => (

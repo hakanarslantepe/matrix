@@ -8,7 +8,7 @@ const Sidebar = () => {
     <div className="h-screen relative flex flex-col">
       <div className="sticky left-0 top-2 z-10 mx-2 cursor-pointer flex">
         <div className="w-full flex flex-row p-2 gap-x-2 hover:bg-slate-400 rounded-md items-center justify-center md:gap-x-5">
-          <Image src="/add.png" alt="Add Image" width={25} height={25} />
+          <Image src="/add.png" alt="Add Image" width={25} height={25} className="md:block hidden" />
           <p className="text-center font-bold"> New Chat</p>
         </div>
       </div>
